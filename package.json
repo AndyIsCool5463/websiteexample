@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AndyIsCool5463/websiteexample/issues"
   },
-  "homepage": "https://github.com/AndyIsCool5463/websiteexample#readme"
+  "homepage": "https://github.com/AndyIsCool5463/websiteexample#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }

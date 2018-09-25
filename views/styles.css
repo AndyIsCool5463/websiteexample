@@ -1,0 +1,31 @@
+p {
+  background-image: "background.png";
+}
+.author {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 25px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: rgb(180, 78, 227);
+  font-weight: 700;
+  text-decoration: none solid rgb(180, 78, 227);
+  font-style: italic;
+  font-variant: small-caps;
+  text-transform: lowercase;
+}
+#Nothing {
+  font-family: fantasy;
+  color: green;
+  font-weight: 300;
+}
+
+#clickMe {
+  color: blue;
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+}
+
+#clickMe:Hover {
+  background-color: rgba(213, 194, 194, 1);
+}
