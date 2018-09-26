@@ -12,6 +12,7 @@ p {
   font-style: italic;
   font-variant: small-caps;
   text-transform: lowercase;
+  text-align: right;
 }
 #Nothing {
   font-family: fantasy;
@@ -24,8 +25,16 @@ p {
   border: 0;
   line-height: 2.5;
   padding: 0 20px;
+  align: center;
 }
 
 #clickMe:Hover {
   background-color: rgba(213, 194, 194, 1);
+}
+
+#lolU {
+  color: green;
+  font-style: italic;
+  font-size: 16px;
+  font-family: sans-serif;
 }

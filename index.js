@@ -2,12 +2,11 @@ const express = require('express');
 var app = express();
 var router = express.Router();
 var path = __dirname + '/views/';
-
 router.use(function (req,res,next) {
-  console.log("/" + req.method);
+//  console.log("/" + req.method);
   next();
 });
-
+app.use(express.static(__dirname + '/views'));
 router.get("/",function(req,res){
   res.sendFile(path + "index.html");
 });
