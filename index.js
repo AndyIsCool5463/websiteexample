@@ -8,7 +8,9 @@ router.use(function (req,res,next) {
 });
 app.use(express.static(__dirname + '/views'));
 router.get("/",function(req,res){
-  res.sendFile(path + "index.html");
+  res.render(path + "index.html");
+  res.send("200");
+  console.log('Client Sent to homepage!!')
 });
 
 router.get("/about",function(req,res){
@@ -17,12 +19,14 @@ router.get("/about",function(req,res){
 
 router.get("/contact",function(req,res){
   res.sendFile(path + "contact.html");
+  console.log('Client Sent to Contact!')
 });
 
 app.use("/",router);
 
 app.use("*",function(req,res){
   res.sendFile(path + "404.html");
+  console.log('Client Sent to 404!')
 });
 
 app.listen(3000,function(){
