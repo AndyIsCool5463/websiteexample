@@ -42,3 +42,6 @@ function redirecthome() {
 function submit() {
   window.location.replace("/submit")
 }
+function redirectcontact() {
+  window.location.replace('/contact')
+}
