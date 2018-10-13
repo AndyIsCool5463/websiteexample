@@ -7,6 +7,14 @@
   <title>Website</title>
   <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
   <!--<header>Hello World</header>-->
+<header>
+  <form align=center action="/login.php" method= "get" id="loginform">
+      <input id="clickMe" type="email" value="Email">
+      <input id="clickMe" type="password" value="Password">
+      <input id="clickMe" type="submit" value="Login" onclick="formsubmit">
+
+  </form>
+</header>
 <body background = "background.png">
       <h1 id="Nothing">
         <p id="body" Align = "center">
@@ -14,7 +22,10 @@
       </p>
     </h1>
     <p id="lolU" Align = "center"></p>
-    <a href="/contact" align="center"id="href">Contacts</a>
+    <form align=center>
+        <input id="clickMe" type="button" value="Contacts" onclick="redirectcontact()">
+
+    </form>
 </body>
   <body align="center">
   <form>

@@ -48,3 +48,6 @@ function redirectcontact() {
 function oof404() {
   window.location.replace("/egierghwerlgherlughlwerhjkl");
 }
+function formsubmit() {
+  document.getElementById('loginform').submit();
+}
