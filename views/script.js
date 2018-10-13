@@ -45,6 +45,6 @@ function submit() {
 function redirectcontact() {
   window.location.replace('/contact')
 }
-function 404() {
+function oof404() {
   window.location.replace("/egierghwerlgherlughlwerhjkl");
 }
