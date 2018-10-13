@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/AndyIsCool5463/websiteexample#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "html": "^1.0.0"
   }
 }

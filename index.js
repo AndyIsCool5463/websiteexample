@@ -16,7 +16,9 @@ router.get("/",function(req,res){
 router.get("/about",function(req,res){
   res.sendFile(path + "about.html");
 });
-
+router.get("/sumbit",function(req,res){
+  res.sendFile(path + "submit.html");
+});
 router.get("/contact",function(req,res){
   res.sendFile(path + "contact.html");
   console.log('Client Sent to Contact!')

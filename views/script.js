@@ -32,3 +32,13 @@ function time() {
 
 
 }
+
+function redirect404() {
+  window.location.replace("/404");
+}
+function redirecthome() {
+  window.location.replace("/");
+}
+function submit() {
+  window.location.replace("/submit")
+}
