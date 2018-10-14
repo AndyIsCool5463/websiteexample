@@ -51,3 +51,6 @@ function oof404() {
 function formsubmit() {
   document.getElementById('loginform').submit();
 }
+function mainlogin() {
+  document.getElementById('loginform').submit();
+}

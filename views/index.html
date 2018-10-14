@@ -8,11 +8,10 @@
   <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
   <!--<header>Hello World</header>-->
 <header>
-  <form align=center action="/login.php" method= "get" id="loginform">
-      <input id="clickMe" type="email" value="Email">
-      <input id="clickMe" type="password" value="Password">
-      <input id="clickMe" type="submit" value="Login" onclick="formsubmit">
-
+  <form align=center action="/login" method= "POST" id="loginform">
+    Email:  <input id="clickMe" type="email" name="email" value="Email">
+    Password:  <input id="clickMe" type="password" name="pasword" value="Password">
+      <input id="clickMe" type="Submit" value="Login" onclick="mainlogin()">
   </form>
 </header>
 <body background = "background.png">
