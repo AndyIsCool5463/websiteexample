@@ -4,11 +4,12 @@ var router = express.Router();
 var bodyParser = require('body-parser')
 var path = __dirname + '/views/';
 const fs = require('fs')
+const Enmap = require('enmap')
 router.use(function (req,res,next) {
 //  console.log("/" + req.method);
   next();
 });
-
+const Database = new Enmap({ name: "logininfo" });
 const layout = require('express-layout')
 
 app.use(express.static(__dirname + '/views'));
@@ -32,6 +33,8 @@ app.post('/login', urlencodedParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
 //  res.send('welcome, ' + req.body.lastname)
 console.log(req.body)
+Database.set("Email", req.body.email)
+console.log(Database.get('Email'))
 res.render(path + "login.ejs", {data: req.body})
 })
 
