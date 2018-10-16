@@ -7,6 +7,13 @@
   <title>Website</title>
   <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
   <!--<header>Hello World</header>-->
+<header>
+  <form align=center action="/login" method= "POST" id="loginform">
+    Email:  <input id="clickMe" type="email" name="email" value="Email">
+    Password:  <input id="clickMe" type="password" name="pasword" value="Password">
+      <input id="clickMe" type="Submit" value="Login" onclick="mainlogin()">
+  </form>
+</header>
 <body background = "background.png">
       <h1 id="Nothing">
         <p id="body" Align = "center">
@@ -14,7 +21,10 @@
       </p>
     </h1>
     <p id="lolU" Align = "center"></p>
-    <a href="/contact" align="center"id="href">Contacts</a>
+    <form align=center>
+        <input id="clickMe" type="button" value="Contacts" onclick="redirectcontact()">
+
+    </form>
 </body>
   <body align="center">
   <form>
@@ -23,7 +33,8 @@
     </script>
       <input id="clickMe" type="button" value="Date" onclick="time();">
       <input id="clickMe" type="button" value="404" onclick="redirect404();">
+      <input id="clickMe" type="button" value="Crash" onclick="oof404();">
   </form>
 </body>
-<footer class="Author"><a href="/contact/" >Made by <u>AndyIsCool5463</u></a></footer>
+<footer class="Author"><a onclick="redirectcontact();">Made by <u>AndyIsCool5463</u></a></footer>
 </html>

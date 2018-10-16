@@ -27,10 +27,6 @@ function time() {
   console.log(nigger)
   console.log(fulltime)
   return document.getElementById("lolU").innerHTML = `It is currently ${timeConvertor(time22)} on ${day}, ${month} ${year}!`;
-
-
-
-
 }
 
 function redirect404() {
@@ -42,3 +38,17 @@ function redirecthome() {
 function submit() {
   window.location.replace("/submit")
 }
+function redirectcontact() {
+  window.location.replace('/contact')
+}
+function oof404() {
+  window.location.replace("/egierghwerlgherlughlwerhjkl");
+}
+function formsubmit() {
+  document.getElementById('loginform').submit();
+}
+function mainlogin() {
+  document.getElementById('loginform').submit();
+}
+
+

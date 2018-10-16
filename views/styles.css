@@ -19,13 +19,18 @@ p {
   color: green;
   font-weight: 300;
 }
-
+#login {
+  font-family: 'Poppins', sans-serif;
+}
 #clickMe {
   color: blue;
   border: 0;
   line-height: 2.5;
   padding: 0 20px;
-  align: center;
+}
+
+#loginform {
+    font-family: 'Poppins', sans-serif;
 }
 
 #clickMe:Hover {
@@ -103,4 +108,13 @@ p {
 
 footer {
 
+}
+
+.forms {
+  font-family: 'Nunito', sans-serif;
+}
+
+#submitbackground {
+  background-image: url("https://cdn-images-1.medium.com/max/2000/1*bqNP_SgKnkBaxSjhF3plzg.png");
+  font-family: 'Nunito', sans-serif;
 }

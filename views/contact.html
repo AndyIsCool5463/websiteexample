@@ -4,18 +4,26 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <script src="script.js"></script>
+  <script src="index.js"></script>
   <title>Website</title>
   <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
   <!--<header>Hello World</header>-->
 <body background='contact1080p2.png'>
-  <h1>Contact me!</h1>
-  <form>
-  First name:<br>
-  <input type="text" value="Mickey"><br>
-  Last name:<br>
-  <input type="text" name="lastname" value="Mouse"><br><br>
-  <input type="submit" value="Submit">
+  <h1 align=center class="forms">Contact me!</h1>
+  <input id="home" type="button" value="Home" align=center onclick="redirecthome();">
+  <form action="/submit" method="POST" align=center class="forms">
+  <label for="firstn">First Name:</label>
+  <input type="text"  id="firstn" name="firstname"><br>
+  <br>
+  <label for="lastn">Last Name:</label>
+  <input type="text" id="lastn" name="lastname"><br>
+  <br>
+  <label for="contacter">Contacter:</label>
+  <input type="textare" id="contacter" name="contacted"><br>
+    <br>
+   <label for="message">Message:</label>
+  <input type="text" id="message" name="message"><br><br> 
+  <input id="clickme" type="submit" value="Submit" onclick="formsubmit">
 </form>
-  <input id="home" type="button" value="Home" onclick="redirecthome();">
 </body>
 </html>
