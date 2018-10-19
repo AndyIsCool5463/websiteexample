@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+  <title>Admin CP</title>
+<script src="script.js"></script>
+<p>
+  <input id="home" type="button" value="Home" onclick="redirecthome();">
+<h1 align=center>
+  Administration
+  </h1>
+  </p>
+  
+<h2 align=center>Control Panel</h2>
+<p align=center>Welcome <%= data.pasword %>! Daily phrase of the day is: <%= test %></p>
+<p>
+  <div class='divformAdmin'>
+  <tr align=center>
+    <form action="/lookup" method='POST' id="lookupForm">
+      <th> <label for="fname">First Name:</label> </th>
+   <th> <input name="fname"></input> </th>
+   <th> <label for="lname">Last Name:</label> </th>
+   <th> <input name="lname"></input> </th>
+   <th> <label for="code" >ID: </label> </th>
+    <th><input name="code" id="code" type='text'></input> </th>
+    <th><input type="button" value='Search' onclick="lookup()"/> </th>
+  </form>
+</tr>
+  </div>
+</p>
+<body id='submitbackground'>
+    
+</body>
+</html>

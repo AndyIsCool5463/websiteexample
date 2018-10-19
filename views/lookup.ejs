@@ -1,0 +1,29 @@
+<html>
+  <head>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+  <title>Looked Up <%= test %></title>
+<script src="script.js"></script>
+  <input id="home" type="button" value="Return" onclick="goBack();">
+  <input id="home" type="button" value="Home" onclick="redirecthome();">
+  <style>
+  .lookedUp body {
+      background: url('https://www.planwallpaper.com/static/images/4443062-cool-backgrounds.jpg');
+      height: 100%;
+    }
+  </style>
+  <div class='lookedUp'>
+    <body>
+      <p>
+    The User, <%= data.fname %> <%= data.lname%> has send this message: <%= test %> . 
+      
+      <h6>
+      You searched by id: <%= code %>
+      </h6>
+  </p>
+    </body> 
+  </div>
+  
+</html>

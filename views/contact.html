@@ -11,7 +11,7 @@
 <body background='contact1080p2.png'>
   <h1 align=center class="forms">Contact me!</h1>
   <input id="home" type="button" value="Home" align=center onclick="redirecthome();">
-  <form action="/submit" method="POST" align=center class="forms">
+  <form action="/submit" method="POST" align=center class="forms" id='contactform'>
   <label for="firstn">First Name:</label>
   <input type="text"  id="firstn" name="firstname"><br>
   <br>
@@ -21,9 +21,11 @@
   <label for="contacter">Contacter:</label>
   <input type="textare" id="contacter" name="contacted"><br>
     <br>
-   <label for="message">Message:</label>
-  <input type="text" id="message" name="message"><br><br> 
-  <input id="clickme" type="submit" value="Submit" onclick="formsubmit">
+    <label for="textbox">Message:</label>
+  <textarea id="textbox" name="message" form="contactform" ></textarea><br><br>
+    <p align="center">
+ <input id="clickme" type="submit" value="Submit" onclick="formsubmit">
+    </p> 
 </form>
 </body>
 </html>

@@ -6,12 +6,13 @@ var path = __dirname + '/views/';
 const fs = require('fs')
 const Enmap = require('enmap')
 const date = new Date()
+const scripts = require('./views/script.js')
 router.use(function (req,res,next) {
 //  console.log("/" + req.method);
   next();
 });
 // time
-
+var code = scripts.code;
 const Database = new Enmap({ name: "logininfo" });
 const layout = require('express-layout')
 
@@ -24,7 +25,6 @@ router.get("/",function(req,res){
   res.send("200");
   console.log('Client Sent to homepage!!')
 });
-
 // Post Req
 app.post('/submit', urlencodedParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
@@ -77,9 +77,35 @@ console.log(req.body)
 Database.set("Email", req.body.email)
 Database.set("pasword", req.body.pasword)
 Database.set("message", req.body.message)
-console.log(`User logged in with: ${Database.get('Email')} & ${Database.get("pasword")}`)
-res.render(path + "login.ejs", {data: req.body})
+  console.log(`User logged in with: ${Database.get('Email')} & ${Database.get("pasword")}`)
+  if(req.body.email === "admin") {
+    var var1 = "for allah";
+    res.render(path + "login2.ejs", {data: req.body, test: var1});
+    console.log('Admin Logged in!')
+  } else return(res.render(path + "login.ejs", {data: req.body}));
+
 })
+
+app.post('/lookup', urlencodedParser, function (req, res) {
+    if (!req.body) return res.sendStatus(400)
+  console.log(req.body)
+    let code = req.body.code;
+  if(!req.body.code) {
+      code = "Undefined";
+  }
+
+  let input = Database.get(code)
+ var var1 = false;
+  if(!input) {
+    var1 = true;
+  }
+  if(var1 === true) {
+    let text = `The user, ${req.body.code} (${req.body.fname}, ${req.body.lname}) does not exist in the database.`
+      return(res.render(path + "lookupUKN.ejs", {data: req.body, test: input, code: code, text: text}));
+  } else return(res.render(path + "lookup.ejs", {data: req.body, test: input, code: code}));
+});
+
+
 
 router.get("/about",function(req,res){
   res.sendFile(path + "about.html");
@@ -99,6 +125,13 @@ router.get("/submit",function(req,res){
 //res.render(path + 'contact.ejs');
   console.log('Client Sent to Submit!')
 });
+
+router.get("/calculator",function(req,res){
+ res.render(path + "calculator.ejs");
+//res.render(path + 'contact.ejs');
+  console.log('Client Sent to Calculator!')
+});
+
 app.use("/",router);
 
 app.use("*",function(req,res){

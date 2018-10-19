@@ -112,9 +112,36 @@ footer {
 
 .forms {
   font-family: 'Nunito', sans-serif;
+  padding: 15px;
 }
 
 #submitbackground {
   background-image: url("https://cdn-images-1.medium.com/max/2000/1*bqNP_SgKnkBaxSjhF3plzg.png");
   font-family: 'Nunito', sans-serif;
+}
+
+.divformAdmin input {
+    background: none;
+}
+
+.divformAdmin form{
+    text-align: left;
+}
+
+.lookedUp p{
+  font-family: 'Mali', cursive;
+}
+.lookedUp body {
+    background-image: url('http://ubuntuweblogs.org/wp-content/uploads/2018/06/blue-linux-wallpapers-awesome-your-wallpapers-the-lounge-kerbal-space-program-forums-of-blue-linux-wallpapers.jpg');
+}
+
+.github img {
+  width: 32px;
+  height: 32px;
+}
+
+.github img:hover {
+  width: 512px;
+  height: 512px;
+  transition:800ms ease all;
 }

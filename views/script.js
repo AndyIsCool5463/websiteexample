@@ -1,3 +1,4 @@
+
 function timeConvertor(time) {
     var PM = time.match('PM') ? true : false
 
@@ -17,14 +18,14 @@ function timeConvertor(time) {
 
 function time() {
   let fulltime = new Date();
-  let hitler = fulltime + " ";
-  let nigger = hitler.split(" ")
-  let faggot = nigger.splice(6, 3, '')
-  let day = nigger[0]
-  let month = nigger[1]
-  let year = nigger[3]
-  let time22 = nigger[4]
-  console.log(nigger)
+  let idnno = fulltime + " ";
+  let lol = idnno.split(" ")
+  let faggot = lol.splice(6, 3, '')
+  let day = lol[0]
+  let month = lol[1]
+  let year = lol[3]
+  let time22 = lol[4]
+  console.log(lol)
   console.log(fulltime)
   return document.getElementById("lolU").innerHTML = `It is currently ${timeConvertor(time22)} on ${day}, ${month} ${year}!`;
 }
@@ -44,11 +45,47 @@ function redirectcontact() {
 function oof404() {
   window.location.replace("/egierghwerlgherlughlwerhjkl");
 }
+function calculator() {
+  window.location.replace('/calculator')
+}
 function formsubmit() {
   document.getElementById('loginform').submit();
 }
 function mainlogin() {
   document.getElementById('loginform').submit();
 }
+function redirectAdmin() {
+   window.location.replace("/login")
+}
+function lookup() {
+   var code = document.getElementById('code').value;
+    document.getElementById('lookupForm').submit();
+ return module.exports = { code: `${code}` };
+}
 
+function goBack() {
+    window.history.back();
+}
 
+function insert(num) {
+    document.form.textview.value = document.form.textview.value+num;
+}
+
+function equal() {
+  var exp = document.form.textview.value;
+  if(exp) {
+      document.form.textview.value = eval(document.form.textview.value)
+  }  
+}
+function clean() {
+  document.form.textview.value = "";
+}
+
+function back() {
+    var exp = document.form.textview.value;
+    document.form.textview.value = exp.substring(0, exp.length-1)
+}
+
+function redirectGit() {
+    window.location.replace('https://github.com/AndyIsCool5463/websiteexample')
+}
