@@ -30,17 +30,37 @@
     <th><input type="button" value='Search' onclick="lookup()" /> </th>
   </form>
 </tr>
+  </div>
+<div class="discordForm">
 <form action="https://kantibot.glitch.me/discord" method='POST' id="POSTdiscordForm">
+  Discord Message Sender <br>
       <th> <label for="uuid">UUID:</label> </th>
       
-   <th> <input name="uuid" type="password" value="44314d2-e2e0-4c62-a861-c5d6884ebe9c"></input> </th>
+   <th> <input name="uuid" type="password"  value="44314d2-e2e0-4c62-a861-c5d6884ebe9c"></input> </th>
 <th> <label for="author">Who to send as:</label> </th>
-<th> <input name="author" placeholder="Admin"></input> </th>
-<th> <label for="msg">Message To Send:</label> </th>
-  <th> <input name="msg" placeholder="Hello World!"></input> </th>
-  <th><input type="button" value='Send' onclick="POSTdiscord()" /> </th>
+<th> <input name="author" class="textbox" placeholder="Admin" required></input> </th>
+<!-- <th> <label for="channel">Channel to Send:</label> </th>
+<th><input type="list" name='channel' id="channels"/> </th> -->
+<label for="channels">Channel:</label>
+   <input list="channels" class="textbox" name="channels" required>
+  <datalist id="channels">
+    <option value="495069439213961237"><a href="https://discord.gg/cRd5c7">#general</a></option>
+    <option value="499055438696808470">#hng-api</option>
+  </datalist>
+<th> <label for="msg" required>Message To Send:</label> </th>
+  <th> <input name="msg" class="textbox" placeholder="Hello World!" required></input> </th>
+  <th><input id="sumbitB" type="button" value='Send' onclick="POSTdiscord()" /> </th>
+
+ 
+
+
+
+
+
+
   </form>
-  </div>
+</div>
+
 </p>
 <body id='submitbackground'>
     

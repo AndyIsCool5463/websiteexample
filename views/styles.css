@@ -186,3 +186,22 @@ p {
 }
 
 /* END ROTATE STYLES */
+
+.textbox {
+    text-indent: 10px;
+    border-radius: 20px;
+    background: linear-gradient(grey to black);
+    color: black;
+}
+.discordForm input[type=button] {
+    background: none;
+    border-color: black;
+    border-radius: 10px;
+    transition: 1s ease-in-out;
+}
+.discordForm input[type=button]:hover {
+    background: white;
+    border-color: black;
+    border-radius: 0px;
+    
+}
