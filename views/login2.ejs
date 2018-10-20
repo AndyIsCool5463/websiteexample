@@ -14,7 +14,9 @@
   </p>
   
 <h2 align=center>Control Panel</h2>
-<p align=center>Welcome <%= data.pasword %>! Daily phrase of the day is: <%= test %></p>
+<p align=center>Welcome <%= data.pasword %>! Daily phrase of the day is:<br><h5 align=center>
+  <%= value %>
+</h5></p>
 <p>
   <div class='divformAdmin'>
   <tr align=center>
@@ -24,10 +26,20 @@
    <th> <label for="lname">Last Name:</label> </th>
    <th> <input name="lname"></input> </th>
    <th> <label for="code" >ID: </label> </th>
-    <th><input name="code" id="code" type='text'></input> </th>
-    <th><input type="button" value='Search' onclick="lookup()"/> </th>
+    <th><input name="code" id="code" type='text' placeholder="JohnDoeSatOct2018"></input> </th>
+    <th><input type="button" value='Search' onclick="lookup()" /> </th>
   </form>
 </tr>
+<form action="https://kantibot.glitch.me/discord" method='POST' id="POSTdiscordForm">
+      <th> <label for="uuid">UUID:</label> </th>
+      
+   <th> <input name="uuid" type="password" value="44314d2-e2e0-4c62-a861-c5d6884ebe9c"></input> </th>
+<th> <label for="author">Who to send as:</label> </th>
+<th> <input name="author" placeholder="Admin"></input> </th>
+<th> <label for="msg">Message To Send:</label> </th>
+  <th> <input name="msg" placeholder="Hello World!"></input> </th>
+  <th><input type="button" value='Send' onclick="POSTdiscord()" /> </th>
+  </form>
   </div>
 </p>
 <body id='submitbackground'>

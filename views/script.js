@@ -62,6 +62,9 @@ function lookup() {
     document.getElementById('lookupForm').submit();
  return module.exports = { code: `${code}` };
 }
+function POSTdiscord() {
+    document.getElementById('POSTdiscordForm').submit();
+}
 
 function goBack() {
     window.history.back();

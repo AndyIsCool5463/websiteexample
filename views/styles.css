@@ -106,9 +106,7 @@ p {
   text-align: center;
 }
 
-footer {
 
-}
 
 .forms {
   font-family: 'Nunito', sans-serif;
@@ -138,10 +136,53 @@ footer {
 .github img {
   width: 32px;
   height: 32px;
+  transition: 1s ease-in-out;
 }
 
 .github img:hover {
-  width: 512px;
-  height: 512px;
-  transition:800ms ease all;
+  width: 256px;
+  height: 256px;
+  cursor: pointer;
+ /* transition:800ms ease all; */
 }
+.indexFooter {
+  position: absolute;
+        top: 93%;
+        left: 85%;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: rgb(180, 78, 227);
+    font-weight: 700;
+    text-decoration: none solid rgb(180, 78, 227);
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    text-align: right;
+     transition: color 1s ease-in-out;
+}
+
+.indexFooter:hover {
+    cursor: pointer;
+  color: rgb(100, 78, 227); 
+  /* transition: 800ms ease all; */
+}
+
+/* START ROTATE STYLES */
+
+#rotator img {
+-webkit-transition: all 1s ease-in-out;
+-moz-transition: all 1s ease-in-out;
+-o-transition: all 1s ease-in-out;
+-ms-transition: all 1s ease-in-out;
+}
+
+#rotator img:hover {
+-webkit-transform: rotate(360deg);
+-moz-transform: rotate(360deg);
+-o-transform: rotate(360deg);
+-ms-transform: rotate(360deg);
+}
+
+/* END ROTATE STYLES */

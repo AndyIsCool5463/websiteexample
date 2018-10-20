@@ -35,6 +35,9 @@
     "node-gyp": "^3.8.0",
     "sqlite3": "^4.0.2",
     "windows-build-tools": "^5.0.0",
-    "better-sqlite-pool": "^0.1.2"
+    "better-sqlite-pool": "^0.1.2",
+    "random-quote": "^0.0.1",
+    "stringify-object": "^3.3.0",
+    "request": "^2.88.0"
   }
 }
