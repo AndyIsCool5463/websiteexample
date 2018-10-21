@@ -205,3 +205,55 @@ p {
     border-radius: 0px;
     
 }
+.Down img{
+  display: block;
+  position: absolute;
+  padding: 0;
+  margin-right: 1%;
+  margin-left: 810;
+  width: 64;
+  height: 64;
+}
+.About {
+    position: absolute;
+    bottom: -128%;
+}
+
+.About h3{
+    position: absolute;
+    top: auto;
+    bottom: 600px;
+    left: 800px;
+    right: auto;
+    text-align: left;
+
+}
+
+.nav {
+  position: sticky;
+  left: 60%;
+  top: 3px;
+  background: #24292e;
+}
+
+.nav ul {
+  list-style: none;
+  color: white;
+  opacity: 1;
+}
+.nav ul li {
+  list-style: none;
+  display: inline-block;
+  font-family: Arial;
+  padding: 5px 60px;
+  transition: 1s ease-in-out;
+}
+.nav ul li:hover {
+  list-style: none;
+  display: inline-block;
+  font-family: Arial;
+  padding: 5px 60px;
+  background: white;
+  color: #24292e;
+  cursor: pointer;
+}

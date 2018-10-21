@@ -92,3 +92,21 @@ function back() {
 function redirectGit() {
     window.location.replace('https://github.com/AndyIsCool5463/websiteexample')
 }
+
+function helloworld() {
+  window.alert("Hello World!")
+}
+
+function mylinkfunction(e) {
+
+       window.location.href="#Author";
+
+       /* need to stop the form sending of the form
+
+        UPDATE as comment: This may not be exactly correct syntax 
+        for stopping a form , look up preventing form submission */
+
+       e.preventDefault();
+       e.stopPropagation(); 
+
+       }

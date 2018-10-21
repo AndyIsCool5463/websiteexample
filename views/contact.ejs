@@ -7,9 +7,16 @@
   <script src="index.js"></script>
   <title>Website</title>
   <!--<header>Hello World</header>-->
+  <div class="nav">
+      <ul>
+        <li onclick="redirecthome()">HOME</li>
+        <li onclick="calculator();">CALCULATOR</li>
+        <li onclick="redirectcontact()">CONTACT</li>
+        <li>LOG IN</li>
+    </ul>
+  </div>
 <body background='contact1080p2.png'>
   <h1 align=center class="forms">Contact me!</h1>
-  <input id="home" type="button" value="Home" align=center onclick="redirecthome();">
   <form action="/submit" method="POST" align=center class="forms" id='contactform'>
   <label for="firstn">First Name:</label>
   <input type="text"  id="firstn" name="firstname"><br>
