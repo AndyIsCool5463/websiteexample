@@ -9,6 +9,7 @@ const date = new Date()
 const stringifyObject = require('stringify-object');
 const scripts = require('./views/script.js')
 const request = require('request')
+const channel_regex = /<|>/g;
 router.use(function (req,res,next) {
 //  console.log("/" + req.method);
   next();
@@ -24,6 +25,7 @@ var quote = randomQuote()
 
 var code = scripts.code;
 const Database = new Enmap({ name: "logininfo" });
+const ChannelG = new Enmap({  name: "guildChannels"});
 const layout = require('express-layout')
 
 app.use(express.static(__dirname + '/views'));
@@ -90,14 +92,17 @@ Database.set("message", req.body.message)
   if(req.body.email === "admin") {
     var var1 = "for allah";
     var yo = quotesArray[Math.floor(Math.random() * quotesArray.length)];
-    
+  let json = require('./guilds.json')
+  let json2 = require('./guildsN.json')
    // console.log(yo) Error Checking
-    res.render(path + "login2.ejs", {data: req.body, test: var1, value: yo});
+    let channelManager = ChannelG.fetchEverything()
+    console.log(channelManager)
+    res.render(path + "login2.ejs", {data: req.body, test: var1, value: yo, guilds: json, guildsN: json2, channels: channelManager});
     console.log('Admin Logged in!')
   } else return(res.render(path + "login.ejs", {data: req.body, quote: quote}));
 
 })
-let uuid = "144314d2-e2e0-4c62-a861-c5d6884ebe9c";
+let uuid = process.env.UUID;
 app.post('/discord', urlencodedParser, function (req, res) {
     if (!req.body) return res.sendStatus(400)
    // if (req.body.uuid != uuid) return res.sendStatus(403)
@@ -107,6 +112,136 @@ app.post('/discord', urlencodedParser, function (req, res) {
     res.json(file);
 });
 
+app.post('/guildUpdate', urlencodedParser, function (req, res) {
+    if (!req.body) return res.sendStatus(400)
+   // if (req.body.uuid != uuid) return res.sendStatus(403)
+ // console.log(req.body)
+  //let pretty = JSON.stringify(req.body.guilds)
+//   var j = req.body.guilds
+//   var j_split =  j.split(" ")
+//   j_split.pop()
+//   var c = req.body.ch;
+//   var c_split = c.split(" ")
+// //  c_split.pop()
+//   var c_finish = JSON.stringify(c_split)
+//   var j_finish = JSON.stringify(j_split)
+//   var j_parsed = JSON.parse(j_finish)
+//  // var c_parsed = JSON.parse(c_finish)
+  //console.log(j_parsed)
+ // console.log(c_finish)
+ // console.log(req.body.ch)
+  var n = req.body.guildsName;
+  var id = req.body.guildsID;
+// console.log(id)
+  let idJ = id.split(" ")
+ // let idJ = idS.join("")
+   var arr = idJ.filter(v=>v!='');
+  
+   arr.forEach(function(entry) {
+     arr.map((gID) => {
+     return `${arr}`
+     })
+    //console.log(entry);
+});
+  var obj = arr.reduce(function(acc, cur, i) {
+  acc[i] = cur;
+  return acc;
+}, {});
+  
+  
+  var ch = req.body.ch; // change
+//  console.log(ch) // change
+  let chJ = ch.split(" ") // change
+ // let idJ = idS.join("")
+   var arr2 = chJ.filter(v=>v!=''); // change
+  
+   arr2.forEach(function(entry) { // change
+     arr2.map((gID) => { // change 
+     return `${arr2}` // change
+     })
+    //console.log(entry);
+});
+  var obj2 = arr2.reduce(function(acc, cur, i) { // change
+  acc[i] = cur; // change
+  return acc; // change 
+}, {});
+  
+  
+  var guildN = req.body.guildsName; // change
+//  console.log(guildN) // change
+  let guildNJ = guildN.split(" ") // change
+ // let idJ = idS.join("")
+   var arr3 = guildNJ.filter(v=>v!=''); // change
+  
+   arr3.forEach(function(entry) { // change
+     arr3.map((guildNJ) => { // change 
+     return `${arr3}` // change
+     })
+    //console.log(entry);
+});
+  var obj3 = arr3.reduce(function(acc, cur, i) { // change
+  acc[i] = cur; // change
+  return acc; // change 
+}, {});
+  
+  
+  //let d
+  console.log(`OBJECT 1: ${JSON.stringify(obj)}`) // returns the ids array as obj
+ // console.log(req.body.ch)
+ // console.log(req.body.guildsName)
+  console.log(`OBJECT 2: ${JSON.stringify(obj2)}`)
+//  console.log(req.body.ch2)
+  console.log(` OBJECT 3: ${JSON.stringify(obj3)}`)
+ // var j_finish = JSON.stringify(n + id) // Displays Names first then IDs in Groups
+  fs.writeFile('guilds.json', JSON.stringify(obj))
+  fs.writeFile('channels.json', JSON.stringify(obj2))
+  fs.writeFile('guildsN.json', JSON.stringify(obj3))
+  console.log(req.body)
+  //console.log(c_split)
+
+  
+  res.sendStatus(200)
+//  process.exit(1)
+});
+app.post('/guildCanary', urlencodedParser, (req, res) => {
+    if(!req.body) return res.sendStatus(400);
+    let regex = /<|>/g;
+    let regex_quotes = /"/g;
+    //console.log(req.body)
+    //debug(req.body.guildsID, req.body.guildsName, req.body.ch, req.body.channelNames)
+    function debug() {
+    let guildID = req.body.guildsID
+    let guildsName = req.body.guildsName
+    let channelID = req.body.ch
+    let channelNames = req.body.channelNames
+    console.log(`IDS: ${JSON.stringify(guildID)} JSON NON PARSED: ${guildID}`)
+    console.log(`NAMES: ${JSON.stringify(guildsName)}`)
+    console.log(`Channels IDs?: ${JSON.stringify(channelID).replace(regex, "")}`)
+    console.log(`Channel Names: ${JSON.stringify(channelNames)}`)
+    console.log(Channel)
+    }
+   // const Channel = JSON.stringify(req.body.channelNames).replace(regex_quotes, '\'');
+    const Channel = req.body.channelNames
+    const channelNameGuild = req.body.channelNameGuild;
+    const cng = req.body.channelNameGuild;
+  
+     function callstack(cName, index) {
+         ChannelG.set(cName, index)
+     }
+     Channel.forEach((c, index) => {
+        callstack(c, channelNameGuild[index])
+       console.log(`Currently setting database for Channel: ${c} in ${channelNameGuild[index]}!`)
+     })
+
+ //   console.log(JSON.stringify(req.body.channelNameGuild))
+ //   console.log(cng.length)
+ // console.log(channelNameGuild)
+  //  console.log(channelNameGuild)
+    
+   // console.log(`${req.body.ch2}`)
+    
+ res.sendStatus(200);
+});
 app.post('/lookup', urlencodedParser, function (req, res) {
     if (!req.body) return res.sendStatus(400)
   console.log(req.body)
