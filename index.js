@@ -28,6 +28,10 @@ const Database = new Enmap({ name: "logininfo" });
 const ChannelG = new Enmap({  name: "guildChannels"});
 const layout = require('express-layout')
 
+
+ChannelG.defer.then( () => {
+   console.log(ChannelG.size + " keys loaded");
+});
 app.use(express.static(__dirname + '/views'));
 app.set('view engine', 'ejs')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -37,6 +41,7 @@ router.get("/",function(req,res){
   res.send("200");
   console.log('Client Sent to homepage!!')
 });
+
 // Post Req
 app.post('/submit', urlencodedParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
@@ -95,9 +100,22 @@ Database.set("message", req.body.message)
   let json = require('./guilds.json')
   let json2 = require('./guildsN.json')
    // console.log(yo) Error Checking
-    let channelManager = ChannelG.fetchEverything()
-    console.log(channelManager)
-    res.render(path + "login2.ejs", {data: req.body, test: var1, value: yo, guilds: json, guildsN: json2, channels: channelManager});
+    let channelManager = JSON.stringify(ChannelG.indexes)
+    let NoNchannelManager = ChannelG.indexes;
+    console.log(channelManager);
+    var channelObject = []
+    NoNchannelManager.forEach(c => {
+   //   var channelObject = new Object();
+     // var element = {}, cart = [];
+      
+      channelObject.push({"name": c, "guild": ChannelG.get(c)});
+      return console.log(`Channel Key: ${c} - "${ChannelG.get(c)}"`);
+       
+    });
+    let channel_map = ChannelG.fetchEverything()
+    var stringify = JSON.stringify(channelObject)
+    console.log(`${stringify}`)
+    res.render(path + "login2.ejs", {data: req.body, test: var1, value: yo, guilds: json, guildsN: json2, channels: channelManager, channel_mapS: channel_map, c_obj: stringify});
     console.log('Admin Logged in!')
   } else return(res.render(path + "login.ejs", {data: req.body, quote: quote}));
 
@@ -232,7 +250,7 @@ app.post('/guildCanary', urlencodedParser, (req, res) => {
         callstack(c, channelNameGuild[index])
        console.log(`Currently setting database for Channel: ${c} in ${channelNameGuild[index]}!`)
      })
-
+    console.log(`ALERT: ${ChannelG.size} have been overwritten/loaded`);
  //   console.log(JSON.stringify(req.body.channelNameGuild))
  //   console.log(cng.length)
  // console.log(channelNameGuild)

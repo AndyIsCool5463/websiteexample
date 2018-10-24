@@ -2,7 +2,9 @@
 <html>
 <head>
   <link rel="stylesheet" href="styles.css">
-  
+     <% var channel_map = channels %>
+    <% var channel_map_a = channel_mapS.map(c => { return c }) %>
+    <% var object = c_obj %>
 </head>
   <title>Admin CP</title>
 <script src="script.js"></script>
@@ -16,7 +18,9 @@
   </div>
 <p>
 <!-- INLINE SCRIPT-->
-<script>
+
+
+<!-- <script>
   document.getElementById("guild7").addEventListener("change", myN);
   function myN() {
     var guilds = document.getElementById('guild7')
@@ -34,11 +38,11 @@
   
   }
   
-</script>
-  
+</script> -->
+ 
   <script>
     var i = 0;
-      document.getElementById("user7").addEventListener("change", gS);
+  document.getElementById("user7").addEventListener("change", gS);
   function gS() {
     var guilds = document.getElementById('guilds')
     var Dchannels = document.getElementById('guilds')
@@ -98,20 +102,19 @@
       
    <th> <input name="uuid" type="password"  value="44314d2-e2e0-4c62-a861-c5d6884ebe9c"></input> </th>
 <th> <label for="author">Who to send as:</label> </th>
-<th> <input name="author" class="textbox" placeholder="Admin" id='user7' onchange="gS()" required></input> </th>
+<th> <input name="author" class="textbox" placeholder="Admin" id="user7" onchange="objectCaller()"></input> </th>
 <label for="channels">Guild:</label>
-  <input list="guilds" class="textbox" id="guild7" name="guilds"  required>
+  <input list="guilds" class="textbox" id="guild7" name="guilds" required>
   <datalist id="guilds">
-     <optgroup label="Guilds">
- <!--   <option value="495069439213961231"><a href="https://discord.gg/cRd5c7">test</a></option>
-    <option value="497946723868737567">𝕭𝖊𝖙𝖗𝖆𝖞𝖊𝖉</option> -->
+     <optgroup label="Guildjs">
+   <option value="495069439213961231"><a href="https://discord.gg/cRd5c7">test</a></option>
+    <option value="497946723868737567">𝕭𝖊𝖙𝖗𝖆𝖞𝖊𝖉</option>
   </optgroup>
   </datalist>
 <label for="channels">Channel:</label>
-   <input list="channels" id="channel7" class="textbox" name="channels" required>
-  <datalist id="channels">
-   <option value="503653914550337547"><a href="https://discord.gg/cRd5c7">#general (test)</a></option>
-    <option value="503668306377441302">#general (testguild)</option>
+<input list="channels56" id="channel7" class="textbox" name="channels" placeholder="Enter Send as to load list." required>
+  <datalist id="channels56">
+ 
   </datalist>
 <th> <label for="msg" required>Message To Send:</label> </th>
   <th> <input name="msg" class="textbox" placeholder="Hello World!" required></input> </th>
@@ -131,4 +134,37 @@
 <body id='submitbackground'>
     
 </body>
+
+
+ <script>
+ 
+
+  // console.log(Dchannels)
+//  let ifthefuckingcomputercantreaditidontfuckingknowwhy = objectHandler;
+ // console.log(objectHandler);
+    
+    let objectHandler = <%- object %>;
+   document.getElementById("user7").addEventListener("change", objectCaller);
+ function objectCaller() {    
+    var Dchannels = document.getElementById('channels56');
+    var guildChooser = document.getElementById('guild7')
+    console.log(Object.keys(objectHandler))
+    objectHandler.forEach((c, i) => {    
+      let name = c.name;
+      let guild = c.guild;
+      console.log(`Setting Options for: ${name} & adding ${guild}`)
+      var option = document.createElement('option')
+      option.value = name;
+      option.textContent = guild;
+      Dchannels.appendChild(option);
+      return console.log(Dchannels);
+  })
+  
+
+  }
+  
+// console.log(); // returns object You can define the object as object[index].property i.e object[0].name returns the object that's in the first index and the name property
+  </script>
+
+
 </html>
