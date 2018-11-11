@@ -205,6 +205,16 @@ p {
     border-radius: 0px;
     
 }
+.discordForm input[type=checkbox]:hover {
+    background: yellow;
+    color: green;
+}
+
+.discordForm input[type=button]:active {
+    background: green;
+    border-color: green;
+    border-radius: 0px;
+}
 .Down img{
   display: block;
   position: absolute;

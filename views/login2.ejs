@@ -13,7 +13,8 @@
         <li onclick="redirecthome()">HOME</li>
         <li onclick="calculator();">CALCULATOR</li>
         <li onclick="redirectcontact()">CONTACT</li>
-        <li>LOG IN</li>
+        <li onclick="coming_soon()">LOG IN</li>
+        <li onclick="go_back()">RETURN</li>
     </ul>
   </div>
 <p>
@@ -39,7 +40,7 @@
   }
   
 </script> -->
- 
+ <iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>
   <script>
     var i = 0;
   document.getElementById("user7").addEventListener("change", gS);
@@ -73,7 +74,7 @@
   </p>
   
 <h2 align=center>Control Panel</h2>
-<p align=center>Welcome <%= data.pasword %>! Daily phrase of the day is:<br><h5 align=center>
+<p align=center>Welcome <%= data.pasword %>! Daily Quote of the day is:<br><h5 align=center>
   <%= value %>
 </h5></p>
 <p>
@@ -96,15 +97,15 @@
 </tr>
   </div>
 <div class="discordForm">
-<form action="https://kantibot.glitch.me/discord" method='POST' id="POSTdiscordForm">
+<form action="https://kantibot.glitch.me/discord" method='POST' id="POSTdiscordForm" target="dummyframe">
   Discord Message Sender <br>
       <th> <label for="uuid">UUID:</label> </th>
       
-   <th> <input name="uuid" type="password"  value="44314d2-e2e0-4c62-a861-c5d6884ebe9c"></input> </th>
+   <th> <input name="uuid" type="password"  value="44314d2-e2e0-4c62-a861-c5d6884ebe9c"></input> </th><br>
 <th> <label for="author">Who to send as:</label> </th>
-<th> <input name="author" class="textbox" placeholder="Admin" id="user7" onchange="objectCaller()"></input> </th>
+<th> <input name="author" class="textbox" placeholder="Admin" id="user7" onload="objectCaller()"></input> </th> <br>
 <label for="channels">Guild:</label>
-  <input list="guilds" class="textbox" id="guild7" name="guilds" required>
+  <input list="guilds" class="textbox" id="guild7" name="guilds" required> <br>
   <datalist id="guilds">
      <optgroup label="Guildjs">
    <option value="495069439213961231"><a href="https://discord.gg/cRd5c7">test</a></option>
@@ -112,12 +113,13 @@
   </optgroup>
   </datalist>
 <label for="channels">Channel:</label>
-<input list="channels56" id="channel7" class="textbox" name="channels" placeholder="Enter Send as to load list." required>
+<input list="channels56" id="channel7" class="textbox" name="channels" placeholder="Enter Send as to load list." required> <br>
   <datalist id="channels56">
  
   </datalist>
+<th> <input type="checkbox" name="user_generated_msg" id='checkbox' value="true" onchange="hint_markdown()">Custom Msg<br> </th>    
 <th> <label for="msg" required>Message To Send:</label> </th>
-  <th> <input name="msg" class="textbox" placeholder="Hello World!" required></input> </th>
+  <th> <input name="msg" class="textbox" placeholder="Hello World!" id="msgBox" required></input> </th>
   <th><input id="sumbitB" type="button" value='Send' onclick="POSTdiscord()" /> </th>
 
  
@@ -142,14 +144,21 @@
   // console.log(Dchannels)
 //  let ifthefuckingcomputercantreaditidontfuckingknowwhy = objectHandler;
  // console.log(objectHandler);
-    
+    function hint_markdown() {
+        let s = document.getElementById('msgBox');
+        s.placeholder = "Discord Markdown Allowed! ie **Hi**";
+    }
     let objectHandler = <%- object %>;
    document.getElementById("user7").addEventListener("change", objectCaller);
- function objectCaller() {    
-    var Dchannels = document.getElementById('channels56');
-    var guildChooser = document.getElementById('guild7')
+   channels56.addEventListener("load", objectCaller);
+ function objectCaller() { 
+    var Dchannels = document.getElementById('channels56'); // These are just vars defining the Stuff
+    var channel7 = document.getElementById('channel7')
+    var guildChooser = document.getElementById('guild7') 
+    channel7.placeholder = ""; // Clears the placeholder when it's loaded
+    Dchannels.innerHTML = ""; // Clears all code when called
     console.log(Object.keys(objectHandler))
-    objectHandler.forEach((c, i) => {    
+    objectHandler.forEach(c => {    // For each statement
       let name = c.name;
       let guild = c.guild;
       console.log(`Setting Options for: ${name} & adding ${guild}`)

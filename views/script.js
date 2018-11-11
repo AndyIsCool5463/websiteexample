@@ -1,4 +1,6 @@
-
+// PEEK A BOO!
+// Theres actually nothing here for you to look at since this shit is all server sided
+// So sorry there bb ;(
 function timeConvertor(time) {
     var PM = time.match('PM') ? true : false
 
@@ -64,9 +66,13 @@ function lookup() {
 }
 function POSTdiscord() {
     document.getElementById('POSTdiscordForm').submit();
+    window.alert("Sent!");
 }
 
 function goBack() {
+    window.history.back();
+}
+function go_back() {
     window.history.back();
 }
 
@@ -96,7 +102,9 @@ function redirectGit() {
 function helloworld() {
   window.alert("Hello World!")
 }
-
+function coming_soon() {
+  window.alert("Coming Soon!")
+}
 function mylinkfunction(e) {
 
        window.location.href="#Author";

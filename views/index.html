@@ -6,15 +6,16 @@
   <script src="script.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.4.1/js/all.js" integrity="sha384-L469/ELG4Bg9sDQbl0hvjMq8pOcqFgkSpwhwnslzvVVGpDjYJ6wJJyYjvG3u8XW7" crossorigin="anonymous"></script>
   <title>Website</title>
-  <link rel='shortcut icon' type='image/x-icon' href='https://cdn.glitch.com/8ec17b86-609b-4461-ad76-7580b79dc4c3%2Fswansong%20trans.png?1539919790487' />
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.glitch.com/8ec17b86-609b-4461-ad76-7580b79dc4c3%2Fswansong%20trans.png?1539919790487" />
   <!--<header>Hello World</header>-->
 <header>
   <div class="nav">
       <ul>
-        <li>HOME</li>
+        <li onclick="redirecthome()">HOME</li>
         <li onclick="calculator();">CALCULATOR</li>
         <li onclick="redirectcontact()">CONTACT</li>
-        <li>LOG IN</li>
+        <li onclick="coming_soon()">LOG IN</li>
+        <li onclick="go_back()">RETURN</li>
     </ul>
   </div>
 </header>
@@ -24,7 +25,7 @@
 <body background = "background.png">
   <br>
   <br>
-  <form align=center action="/login" method= "POST" id="loginform">
+  <form align="center" action="/login" method= "POST" id="loginform">
     Email:  <input id="clickMe" type="email" name="email">
     Password:  <input id="clickMe" type="password" name="pasword">
       <input id="clickMe" type="Submit" value="Login" onclick="mainlogin()">
@@ -61,7 +62,7 @@
   <div class='Down'>
       <img src="https://image.flaticon.com/icons/svg/25/25623.svg" alt="down" onclick="mylinkfunction()">
   </div>
-  <div class='About'>
+  <div class='About' id="About">
       <h3>
         Why I made this Page: 
     </h3>

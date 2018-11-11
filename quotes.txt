@@ -390,3 +390,8 @@ The proper use of comments is to compensate for our failure to express ourself i
 Incorrect documentation is often worse than no documentation.   — Bertrand Meyer
 Security is a state of mind.   — NSA Security Manua
 And don’t EVER make the mistake that you can design something better than what you get from ruthless massively parallel trial-and-error with a feedback cycle. That’s giving your intelligence much too much credit    — Linus 
+“Computers are useless. They can only give you answers.” (Pablo Picasso)
+“Computers are like bikinis. They save people a lot of guesswork.” (Sam Ewing)
+“They have computers, and they may have other weapons of mass destruction.” (Janet Reno)
+“That’s what’s cool about working with computers. They don’t argue, they remember everything, and they don’t drink all your beer.” (Paul Leary)
+“If the automobile had followed the same development cycle as the computer, a Rolls-Royce would today cost $100, get a million miles per gallon, and explode once a year, killing everyone inside.” (Robert X. Cringely)

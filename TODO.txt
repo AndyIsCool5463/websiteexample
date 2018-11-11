@@ -1,2 +1,7 @@
 1. SETUP WEBSERVER with DISCORD [X]
-2. GET FROM DISCORD []
+2. GET FROM DISCORD [X]
+{ firstname: 'Alec',
+  lastname: 'Alec',
+  contacted: 'aleckeyl@gmail.com',
+  message: 'Test' }
+  Code: AlecAlecSunNov2018
