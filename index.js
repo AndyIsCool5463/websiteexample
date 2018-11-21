@@ -56,7 +56,7 @@ if(!fname) {
   }
 if(!lname) { return lname = "NULL";}
 if(!lname) { return lname = "NULL";}
-if(!contacted) { return contacted = "NULL";}
+if(!contacted) { return contacted = "NULL";
 if(!message) { return message = "NULL";}
 }
 checker()
